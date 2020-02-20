@@ -45,18 +45,50 @@ import math
 #        def h(cls, state):
 #               return appropriate h value
  
-
 class BreadthFirst:
     "BredthFirst - breadthfirst search"
-    pass
+    @classmethod
+    def g(cls, parentnode, action, childnode):
+        #Because moving a tile costs 1 
+        if parentnode:
+            return 1
+        else:
+            return 0
+        # return appropritate g value
+    
+    @classmethod
+    def h(cls, state):
+        return 0
+        # return appropriate h value
 
 class DepthFirst:
     "DepthFirst - depth first search"
-    pass
+    @classmethod
+    def g(cls, parentnode, action, childnode): #To be h() 
+        if parentnode:
+            return -childnode.depth
+        else:
+            return 0
+        # return appropritate g value
+    
+    @classmethod
+    def h(cls, state): #To be g() 
+        return 1
+        # return appropriate h value
         
 class Manhattan:
     "Manhattan Block Distance heuristic"
-    pass
-                
-
-       
+    @classmethod
+    def g(cls, parentnode, action, childnode):
+        #Because moving a tile costs 1 
+        if parentnode:
+            return 1
+        else:
+            return 0
+        # return appropritate g value
+    
+    @classmethod
+    def h(cls, state):
+        pos = list.index(None)
+        return (2 -  pos//3) + (2 -  pos%3)
+        # return appropriate h value

@@ -7,21 +7,20 @@ class Explored(object):
 
     def __init__(self):
         "__init__() - Create an empty explored set"
-
-        raise NotImplemented
+        self.explored_set = []
+        # raise NotImplemented
         
     def exists(self, state):
         """exists(state) - Has this state already been explored?
         Returns True or False, state must be hashable
         """
-
-        raise NotImplemented
+        return hash(state) in self.explored_set
+        # raise NotImplemented
     
     def add(self, state):
         """add(state) - add given state to the explored set.  
         state must be hashable and we asssume that it is not already in set
         """
-        
         # The hash function is a Python builtin that generates
         # a hash value from its argument.  Use this to create
         # a dictionary key.  Handle collisions by storing 
@@ -29,5 +28,6 @@ class Explored(object):
         # Note that when you access a Python dictionary by a
         # non existant key, it throws a KeyError
 
-        raise NotImplemented
+        self.explored_set.append(hash(state))
+        # raise NotImplemented
             

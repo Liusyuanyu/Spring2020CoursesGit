@@ -18,7 +18,6 @@ class NPuzzle(Problem):
         The parent's class constructor is then called with the TileBoard
         instance any any remaining arguments captured in **kwargs.
         """
-        
         # Note on **kwargs:
         # **kwargs is Python construct that captures any remaining arguments 
         # into a dictionary.  The dictionary can be accessed like any other 
@@ -26,7 +25,16 @@ class NPuzzle(Problem):
         # as if each entry was a keyword argument:
         #    e.g. foobar(arg1, arg2, …, argn, **kwargs).
 
-        raise NotImplemented
+        # initialize parent
+        # def __init__(self, initial, goals=None, 
+        #          g = lambda oldnode, action, newnode : oldnode.depth+1, 
+        #          h = lambda newnode : 0):
+        nBoard = TileBoard(n, force_state=force_state)
+        super().__init__(goals = nBoard.goals, g=kwargs['g'], g=kwargs['h'])
+        # nBoard.goals
+
+
+        # raise NotImplemented
 
     def actions(self, state):
         "actions(state) - find a set of actions applicable to specified state"
