@@ -5,6 +5,10 @@ pscp -pw password username@remote.server.com:/path/to/folder/* c:\local\folder
 
 pscp -pw kMER5uxr cssc0527@edoras.sdsu.edu:/home/cs/eckberg/cssc0527/Maildir/new/* D:\Courses\Edoras
 
+pscp -pw kMER5uxr cssc0527@edoras.sdsu.edu:/home/cs/eckberg/cssc0527/hw/hw4/* D:\Courses\Edoras
+
+pscp -pw kMER5uxr cssc0527@edoras.sdsu.edu:/home/cs/eckberg/cssc0527/hw/hawaii/* D:\Courses\Edoras
+
 
 move mails:
 mv *.edu ../cur/
@@ -12,3 +16,6 @@ mv *.edu ../cur/
 
 copy files:
 cp file_path destination_path
+
+
+pscp -pw kMER5uxr ./countries.csv cssc0527@edoras.sdsu.edu:/home/cs/eckberg/cssc0527/hw

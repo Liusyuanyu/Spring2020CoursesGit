@@ -1,2 +1,6 @@
 username: cssc0527
 password: kMER5uxr
+
+
+Oracle account:
+st128/cs514@cs514
